@@ -9,7 +9,7 @@ final_df = pd.concat(all_dfs, ignore_index=True)
 
 # Validation for Sold
 print(f"Total Rows: {len(final_df)}")
-print(final_df[['ClosePrice', 'DaysOnMarket', 'LivingArea']].describe())
-print(final_df['PropertyType'].value_counts())
+print(final_df.columns.tolist())
+print(final_df[['ClosePrice', 'LivingArea', 'BedroomsTotal', 'BathroomsTotalInteger']].describe())
 
 final_df.to_csv('merged_sold.csv', index=False)
